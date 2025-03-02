@@ -30,4 +30,13 @@ public class HelloRestController {
     public String sayHelloPathVariable(@PathVariable String name) {
         return "Hello " + name + " from Bridgelabz!";
     }
+
+    // uc4
+    /* RequestParam -@PostMapping annotation to bind Servlet request parameters (that is, query parameters or form data) to a method argument in a controller.
+       return-Hello (firstName) (lastName) from Bridgelabz
+       api- http://localhost:8080/post (with custom provided firstName and lastName) */
+    @PostMapping("/post")
+    public String sayHelloPost(@RequestBody User user) {
+        return "Hello " + user.getFirstName() + " " + user.getLastName() + " from Bridgelabz!";
+    }
 }
