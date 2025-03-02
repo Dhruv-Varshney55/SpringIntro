@@ -16,7 +16,7 @@ public class HelloRestController {
     // uc2
     /* RequestParam -@RequestParam annotation to bind Servlet request parameters (that is, query parameters or form data) to a method argument in a controller.
       return-Hello (name) from Bridgelabz
-      api- http://localhost:8080/hello/query?name=Dhruv */
+      api- http://localhost:8080/query?name=Dhruv */
     @GetMapping("/query")
     public String sayHello(@RequestParam String name) {
         return "Hello " + name + " from Bridgelabz!";
@@ -41,7 +41,7 @@ public class HelloRestController {
     }
 
     // uc5
-    // curl -X PUT localhost:8080/hello/put/Lisa/?lastName=Terrisa -w "\n"
+    // curl -X PUT localhost:8080/put/Lisa/?lastName=Terrisa -w "\n"
     @PutMapping("/put/{firstName}")
     public String sayHello(@PathVariable String firstName, @RequestParam(value = "lastName") String lastName) {
         return "Hello " + firstName + " " + lastName + "!";
